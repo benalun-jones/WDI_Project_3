@@ -4,9 +4,9 @@ var Group = require('../models/group');
 // GET
 function getAll(req, res) {
   User.find(function(err, users) {
-    if(error) return response.json({message: 'computer says no'});
+    if(err) return res.json({message: 'computer says no'});
 
-    response.json({users: users});
+    res.json({users: users});
   }).select('-__v');
 }
 
@@ -17,9 +17,9 @@ function createUser(req, res) {
   var user = new User(req.body);
 
   user.save(function(err) {
-    if(err) return response.json({messsage: 'Could not create user!' + error});
+    if(err) return res.json({messsage: 'Could not create user!' + err});
 
-    response.json({user: user});
+    res.json({user: user});
   });
 }
 
@@ -28,9 +28,9 @@ function getUser(req, res) {
   var id = req.params.id;
 
   User.findById({_id: id}, function(err, user) {
-    if(err) return response.json({message: 'Could not find user!' + error});
+    if(err) return res.json({message: 'Could not find user!' + err});
 
-    response.json({user: user});
+    res.json({user: user});
   }).select('-__v');
 }
 

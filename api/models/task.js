@@ -1,6 +1,5 @@
 var mongoose = require("mongoose");
 
-
 var TaskSchema = new mongoose.Schema({
   task_name: String,
   author: String,
