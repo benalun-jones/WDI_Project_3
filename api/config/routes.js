@@ -5,16 +5,18 @@ var methodOverride = require('method-override');
 
 var userController = require('../controllers/users_controller');
 
-app.get('/api/users', function(req, res) {
+router.route('/users')
 
-  });
+.get(usersController.getAll)
 
-app.post('/api/users', function(req, res) {
+.post(usersController.createUser);
 
-  });
+router.route('/users/:id')
 
-app.delete('/api/users/:user_id', function(req, res) {
+.get(usersController.getUser)
 
-  });
+.patch(usersController.updateUser)
+
+.delete(usersController.removeUser);
 
 module.exports = router;
