@@ -9,7 +9,7 @@ function getAll(req, res) {
 
 function createGroup(req, res){
   var group = new Group(req.body);
-  group.admin_user = req.user.id;
+  // group.admin_user = req.user.id;
 
   group.save(function(err){
     if(err) return res.render('error', {message: 'Could not create group ' + (err) });
@@ -20,11 +20,12 @@ function createGroup(req, res){
 function getGroup(req, res) {
   var id = req.params.id;
 
-  Group.findById({_id: id}, function(err, user) {
+  Group.findById({_id: id}, function(err, group) {
     if(err) return res.json({message: 'Could not find group!' + err});
 
     res.json({group: group});
   }).select('-__v');
+
 }
 
 function updateGroup(req, res){
@@ -38,7 +39,7 @@ function updateGroup(req, res){
 
     group.save(function(err, group) {
       console.log(err);
-     if (err) return res.status(500).json({message: "Something went wrong!"});
+      if (err) return res.status(500).json({message: "Something went wrong!"});
 
       res.status(201).json({message: 'Group successfully updated.', group: group});
     });
@@ -49,7 +50,7 @@ function deleteGroup(req, res){
   Group.findByIdAndRemove({_id: req.params.id}, function(err){
    if (err) return res.status(404).json({message: 'Something went wrong.'});
    res.status(200).json({message: 'Group has been successfully deleted'});
-  });
+ });
 }
 
 module.exports = {

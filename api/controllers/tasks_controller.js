@@ -9,7 +9,7 @@ function getAll(req, res) {
 
 function createTask(req, res){
   var task = new Task(req.body);
-  task.assigned_user = req.user.id;
+  // task.assigned_user = req.user.id;
 
   task.save(function(err){
     if(err) return res.render('error', {message: 'Could not create task ' + (err) });
@@ -20,7 +20,7 @@ function createTask(req, res){
 function getTask(req, res) {
   var id = req.params.id;
 
-  Task.findById({_id: id}, function(err, user) {
+  Task.findById({_id: id}, function(err, task) {
     if(err) return res.json({message: 'Could not find task!' + err});
 
     res.json({task: task});
