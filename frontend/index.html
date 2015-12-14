@@ -6,43 +6,40 @@
   <title>Mind Merge</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <script src="//cdn.jsdelivr.net/satellizer/0.13.1/satellizer.min.js"></script>
   <script src="js/app.js" charset="utf-8"></script>
   <script src="js/groupsController.js" charset="utf-8"></script>
   <script src="js/tasksController.js" charset="utf-8"></script>
-  <script src="js/tasksController.js" charset="utf-8"></script>
+  <script src="js/usersController.js" charset="utf-8"></script>
 </head>
 <body>
   Hello World
-  <!-- <section ng-controller="groupsController as groups">
-    <h1>Current Groups</h1>
-    <ul id="groups">
-      <li ng-repeat="group in groups.all">
-        <strong>{{group.title}}</strong>
+ <section ng-controller="UsersController as users">
+    <h1>Current Users</h1>
+    <ul id="users">
+      <li ng-repeat="user in users.all">
+        <strong>{{user.first_name}}</strong>
       </li>
     </ul>
-
+<!--
     <form class="add-group" ng-submit='groups.addGroup()'>
       {{groups.newGroup.title}}
       <div>
-        <label for="new-criminal-name">Criminal's Name</label>
-        <input type="text" id="new-criminal-name" placeholder="James Monroe" ng-model='criminals.newCriminal.name'>
+        <label for="new-group-title">Group's Title</label>
+        <input type="text" id="new-group-title" placeholder="Newcastle University Geography Students" ng-model='groups.newGroup.title'>
       </div>
 
       <div>
-        <label for="new-criminal-birth">Criminals's Starting Year</label>
-        <input type="text" id="new-criminal-start" placeholder="1817" ng-model='criminals.newCriminal.birth'>
+        <label for="new-group-users">Groups's Users</label>
+        <input type="text" id="new-group-users" placeholder="add you friends" ng-model='groups.newGroup.users'>
       </div>
 
       <div>
-        <label for="new-criminal-death">Criminal's Ending Year</label>
-        <input type="text" id="new-criminal-end" placeholder="1825" ng-model='criminals.newCriminal.death'>
+        <input type="submit" value="Add Group">
       </div>
+    </form> -->
+  </section> 
 
-      <div>
-        <input type="submit" value="Add Criminal">
-      </div>
-    </form>
-  </section> -->
 </body>
 </html>
 
