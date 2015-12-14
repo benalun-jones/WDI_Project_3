@@ -1,5 +1,5 @@
 angular
-  .module('MindMergeApp', [])
+  .module('MindMergeApp')
   .controller('TasksController', TasksController);
 
   TasksController.$inject = ['$http'];

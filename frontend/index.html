@@ -11,33 +11,18 @@
   <script src="js/groupsController.js" charset="utf-8"></script>
   <script src="js/tasksController.js" charset="utf-8"></script>
   <script src="js/usersController.js" charset="utf-8"></script>
+  <script src="js/mainController.js" charset="utf-8"></script>
 </head>
-<body>
-  Hello World
- <section ng-controller="UsersController as users">
+<body ng-controller="MainController as main">
+  <button ng-click="main.authenticate('facebook')">Sign in with Facebook</button>
+
+  <section ng-controller="UsersController as users">
     <h1>Current Users</h1>
     <ul id="users">
       <li ng-repeat="user in users.all">
-        <strong>{{user.first_name}}</strong>
+        <strong>{{user.first_name}} {{user.last_name}}</strong>
       </li>
     </ul>
-<!--
-    <form class="add-group" ng-submit='groups.addGroup()'>
-      {{groups.newGroup.title}}
-      <div>
-        <label for="new-group-title">Group's Title</label>
-        <input type="text" id="new-group-title" placeholder="Newcastle University Geography Students" ng-model='groups.newGroup.title'>
-      </div>
-
-      <div>
-        <label for="new-group-users">Groups's Users</label>
-        <input type="text" id="new-group-users" placeholder="add you friends" ng-model='groups.newGroup.users'>
-      </div>
-
-      <div>
-        <input type="submit" value="Add Group">
-      </div>
-    </form> -->
   </section> 
 
 </body>

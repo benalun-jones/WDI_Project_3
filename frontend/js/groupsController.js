@@ -1,3 +1,3 @@
 angular
-  .module('MindMergeApp', [])
-  .controller('GroupsController', GroupsController);
+  .module('MindMergeApp')
+  // .controller('GroupsController', GroupsController);
