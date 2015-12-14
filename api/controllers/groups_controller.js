@@ -17,6 +17,15 @@ function createGroup(req, res){
   });
 }
 
+function getGroup(req, res) {
+  var id = req.params.id;
+
+  Group.findById({_id: id}, function(err, user) {
+    if(err) return res.json({message: 'Could not find group!' + err});
+
+    res.json({group: group});
+  }).select('-__v');
+}
 
 function updateGroup(req, res){
   Group.findById(req.params.id,  function(err, group) {
@@ -46,6 +55,7 @@ function deleteGroup(req, res){
 module.exports = {
   getAll:  getAll,
   createGroup: createGroup,
+  getGroup: getGroup,
   updateGroup: updateGroup,
   deleteGroup: deleteGroup
 }

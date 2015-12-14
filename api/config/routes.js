@@ -5,7 +5,7 @@ var methodOverride = require('method-override');
 
 var userController = require('../controllers/users_controller');
 var taskController = require('../controllers/tasks_controller');
-// var groupController = require('../controllers/')
+var groupController = require('../controllers/groups_controller');
 
 router.route('/users')
   .get(userController.getAll)

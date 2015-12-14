@@ -1,12 +1,11 @@
 var Task = require('../models/task');
 
 function getAll(req, res) {
-  Task.find(function(err, users) {
-    if(err) return res.json({message: 'computer says no'});
-
-    res.json({tasks: tasks});
-  }).select('-__v');
-}
+  Task.find(function(err, tasks){
+    if (err) return res.status(404).json({ message: 'Something went wrong and we could not pull the tasks.'});
+    res.status(200).json({ tasks: tasks });
+  });
+};
 
 function createTask(req, res){
   var task = new Task(req.body);
