@@ -4,11 +4,12 @@ angular
 
 
   function GroupsController() {
-    var group = this;
+    var self = this;
 
     this.newGroup = {};
-    group.all = [];
-    this.selectedGroup = {};
+    self.all = [];
+    self.group = {};
+    // this.selectedGroup = {};
     // this.getGroups = getGroups;
     // this.createGroup = createGroup;
     // this.removeGroup = removeGroup;

@@ -6,8 +6,10 @@ angular
 
   function Group($resource){
     var Group = $resource('http://localhost:3000/projects/:id', null, {
+      'query': {method: 'GET', params: {}, isArray: true },
       'update': { method:'PATCH' }
       'create': { method: 'POST' }
+      'save': {method: 'POST' },
     });
 
     methods = angular.extend( defaults, methods );
@@ -23,3 +25,4 @@ angular
     
     return Group;
   }
+
