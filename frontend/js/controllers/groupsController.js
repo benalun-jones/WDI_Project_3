@@ -16,7 +16,7 @@ angular
     // this.selectGroup = selectGroup;
     // this.updateGroup = updateGroup;
 
-    self.add = function() {
+    self.createGroup = function() {
       if (group.form.$valid) {
         group.all.push(group.newGroup);
         console.log(group.all);
