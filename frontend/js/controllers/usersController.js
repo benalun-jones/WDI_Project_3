@@ -19,13 +19,13 @@ angular
     // self.showUserProfile = showUserProfile;
     // self.toggleShowUsers = toggleShowUsers;
 
-    function getUsers(){
-      $http
-      .get('http://localhost:3000/users')
-      .then(function(response){
-        self.all = response.data.users;
-      });
-    }
+    // function getUsers(){
+    //   $http
+    //   .get('http://localhost:3000/users')
+    //   .then(function(response){
+    //     self.all = response.data.users;
+    //   });
+    // }
 
 
     function createUser(){

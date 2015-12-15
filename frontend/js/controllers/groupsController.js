@@ -8,6 +8,12 @@ angular
 
     this.newGroup = {};
     group.all = [];
+    this.selectedGroup = {};
+    // this.getGroups = getGroups;
+    // this.createGroup = createGroup;
+    // this.removeGroup = removeGroup;
+    // this.selectGroup = selectGroup;
+    // this.updateGroup = updateGroup;
 
     group.add = function() {
       if (group.form.$valid) {
@@ -16,8 +22,16 @@ angular
       }
     }
 
-  }
+    this.updateGroup = function() {
+      var group = self.selectedgroup;
+      Group.update({ id: group._id }, group, function(group) {
+       //update view
+        var _group = self.groups.filter(function(_group){
+          return _group._id === group._id;
+        })[0]
+        _group.title = group.title;
+        _group.photo = group.photo
+      });
+    };
 
-  $resource("http://localhost:3000/api/group/:id", null, {
-    'update': { method: 'PUT' }
-  });
+  }
