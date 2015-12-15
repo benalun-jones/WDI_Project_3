@@ -16,14 +16,14 @@ angular
     // this.selectGroup = selectGroup;
     // this.updateGroup = updateGroup;
 
-    group.add = function() {
+    self.add = function() {
       if (group.form.$valid) {
         group.all.push(group.newGroup);
         console.log(group.all);
       }
     }
 
-    this.updateGroup = function() {
+    self.updateGroup = function() {
       var group = self.selectedgroup;
       Group.update({ id: group._id }, group, function(group) {
        //update view
@@ -34,5 +34,13 @@ angular
         _group.photo = group.photo
       });
     };
+
+    self.getGroups = function() {
+      // do some stuff here to show all groups
+    }
+
+    self.getGroup = function() {
+      // do something here to show only one group - maybe on another page
+    }
 
   }
