@@ -1,0 +1,28 @@
+<h1>Add A New Group and save hours of time!</h1>
+
+<form>
+
+</form>
+
+<main ng-controller="GroupsController as group">
+  <!-- means we have access to the scope of the main controller -->
+
+  <form ng-submit="group.add()" name="group.form" novalidate>
+    <label for="grouptitle">Title</label>
+    <input name="title" 
+    placeholder="E.g Newcastle University Geography Aerial Wars module"
+    ng-model="group.newGroup.title"
+    required>
+
+    <label for="grouppicture">Picture</label>
+    <input name="picture" 
+    placeholder="Add a picture that sums up your group"
+    ng-model="group.newGroup.picture"
+    required>
+
+    <input type="submit" value="Add">
+  </form>
+
+  <h2 ng-class="group.newGroup.title">{{group.newGroup.title}}</h2>
+
+</main>

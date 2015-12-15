@@ -4,6 +4,7 @@ var GroupSchema = mongoose.Schema({
   title: String,
   users: [{type: mongoose.Schema.ObjectId, ref: 'User'}],
   admin_user: {type: mongoose.Schema.ObjectId, ref: 'User'},
+  picture: String
   // tasks: [Task.schema]
 })
 

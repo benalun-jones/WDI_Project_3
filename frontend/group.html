@@ -1,0 +1,15 @@
+<h1>The Group Page</h1>
+<body>
+  <section ng-show="groups.all.length">
+    <p>Here are a list of our current groups:</p>
+    <ul>
+      <li ng-repeat="group in groups.all">
+        <strong>{{group.local.title}}</strong>
+      </li>
+    </ul>
+    <h2 ng-class="group.title">{{group.title}}</h2>
+  </section>
+  <nav class="grouptabs">
+    <a ui-sref-active="active" ui-sref="addgroup">Add Group</a>
+  </nav>
+  <body>
