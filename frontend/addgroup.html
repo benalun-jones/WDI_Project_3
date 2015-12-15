@@ -4,25 +4,25 @@
 
 </form>
 
-<main ng-controller="GroupsController as group">
+<main ng-controller="GroupsController as groups">
   <!-- means we have access to the scope of the main controller -->
 
-  <form ng-submit="groups.createGroup()" name="group.form" novalidate>
+  <form ng-submit="groups.createGroup()" name="groups.group.form" novalidate>
     <label for="grouptitle">Title</label>
     <input name="title" 
     placeholder="E.g Newcastle University Geography Aerial Wars module"
-    ng-model="group.newGroup.title"
+    ng-model="groups.newGroup.title"
     required>
 
     <label for="grouppicture">Picture</label>
     <input name="picture" 
     placeholder="Add a picture that sums up your group"
-    ng-model="group.newGroup.picture"
+    ng-model="groups.newGroup.picture"
     required>
 
     <input type="submit" value="Add">
   </form>
 
-  <h2 ng-class="group.newGroup.title">{{group.newGroup.title}}</h2>
+  <h2 ng-class="groups.newGroup.title">{{groups.newGroup.title}}</h2>
 
 </main>

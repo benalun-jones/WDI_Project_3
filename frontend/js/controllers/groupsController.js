@@ -2,13 +2,14 @@ angular
   .module('MindMergeApp')
   .controller('GroupsController', GroupsController);
 
-
-  function GroupsController() {
+GroupsController.$inject = ['Group'];
+  function GroupsController(Group) {
     var self = this;
 
-    this.newGroup = {};
+    self.newGroup = {};
     self.all = [];
     self.group = {};
+    self.newGroup = {};
     // this.selectedGroup = {};
     // this.getGroups = getGroups;
     // this.createGroup = createGroup;
@@ -17,9 +18,16 @@ angular
     // this.updateGroup = updateGroup;
 
     self.createGroup = function() {
-      if (group.form.$valid) {
-        group.all.push(group.newGroup);
-        console.log(group.all);
+      console.log(self.group.form)
+      if (self.group.form.$valid) {
+        console.log("click")
+        Group.save(self.newGroup, function(group) {
+          self.all.push(group);
+          self.newGroup = {};
+        })
+        
+
+        console.log(self.all);
       }
     }
 
