@@ -1,0 +1,13 @@
+body {
+  background-image: url('http://eyeforpharmadrupalfs.s3.amazonaws.com/team_1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1.homepagetitle {
+  text-align: center;
+}
+
+.signupbutton {
+  
+}
