@@ -1,0 +1,35 @@
+<h1>Add A New Group and save hours of time!</h1>
+
+<form>
+
+</form>
+
+<main ng-controller="GroupsController as groups">
+  <!-- means we have access to the scope of the main controller -->
+
+  <form ng-submit="groups.createGroup()" name="groups.group.form" novalidate>
+    <label for="grouptitle">Title</label>
+    <input name="title" 
+    placeholder="E.g Newcastle University Geography Aerial Wars module"
+    ng-model="groups.newGroup.title"
+    required>
+
+    <label for="grouppicture">Picture</label>
+    <input name="picture" 
+    placeholder="Add a picture that sums up your group"
+    ng-model="groups.newGroup.picture"
+    required>
+
+    <input type="submit" value="Add">
+  </form>
+
+  <h2 ng-class="groups.newGroup.title">{{groups.newGroup.title}}</h2>
+
+</main>
+
+task_name: String,
+author: String,
+pages: String,
+users_voted: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+assigned_user: {type: mongoose.Schema.ObjectId, ref: 'User'},
+notes: String,

@@ -21,7 +21,7 @@ GroupsController.$inject = ['Group'];
       console.log(self.group.form)
       if (self.group.form.$valid) {
         console.log("click")
-        Group.save(self.newGroup, function(group) {
+        Group.save(self.newGroup, function(group) { 
           self.all.push(group);
           self.newGroup = {};
         })

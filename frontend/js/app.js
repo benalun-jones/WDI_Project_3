@@ -35,6 +35,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     .state('addgroup', {
       url: "/addgroup",
       templateUrl: "addgroup.html"
+    })
+    .state('addtask', {
+      url: "/addtask",
+      templateUrl: "addtask.html"
     });
   
   $urlRouterProvider.otherwise("/");
