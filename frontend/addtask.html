@@ -1,35 +1,33 @@
-<h1>Add A New Group and save hours of time!</h1>
+<h1>Add A New Task on your reading list</h1>
+<main ng-controller="TasksController as tasks">
+  <form>
 
-<form>
+    <form ng-submit="tasks.createTask()" name="tasks.task.form" novalidate>
+      <label for="task_name">Title</label>
+      <input name="task_name" 
+      placeholder="E.g Aerial Geographies"
+      ng-model="tasks.newTask.task_name"
+      required>
 
-</form>
+      <label for="author">Author</label>
+      <input name="author" 
+      placeholder="Add an author for this task"
+      ng-model="tasks.newTasks.author"
+      required>
 
-<main ng-controller="GroupsController as groups">
-  <!-- means we have access to the scope of the main controller -->
+      <label for="pages">Pages</label>
+      <input name="pages" 
+      placeholder="Add the pages to note for this task"
+      ng-model="tasks.newTasks.pages"
+      required>
 
-  <form ng-submit="groups.createGroup()" name="groups.group.form" novalidate>
-    <label for="grouptitle">Title</label>
-    <input name="title" 
-    placeholder="E.g Newcastle University Geography Aerial Wars module"
-    ng-model="groups.newGroup.title"
-    required>
+      <input type="submit" value="Add">
+    </form>
 
-    <label for="grouppicture">Picture</label>
-    <input name="picture" 
-    placeholder="Add a picture that sums up your group"
-    ng-model="groups.newGroup.picture"
-    required>
-
-    <input type="submit" value="Add">
+    <h2 ng-class="groups.newGroup.title">{{groups.newGroup.title}}</h2>
   </form>
-
-  <h2 ng-class="groups.newGroup.title">{{groups.newGroup.title}}</h2>
-
 </main>
 
-task_name: String,
-author: String,
-pages: String,
-users_voted: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
-assigned_user: {type: mongoose.Schema.ObjectId, ref: 'User'},
+
+
 notes: String,
