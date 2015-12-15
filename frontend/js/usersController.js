@@ -27,6 +27,14 @@ angular
       });
     }
 
+    self.isLoggedIn = function() {
+      return !!TokenService.getToken();
+    }
+    if (self.isLoggedIn ()){
+      self.getUsers();
+      self.user = TokenService.getUser();
+    }
+
 
 
     // function toggleShowUsers(){
