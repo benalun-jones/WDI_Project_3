@@ -5,9 +5,23 @@
 </form>
 
 <main ng-controller="GroupsController as groups">
-  <!-- means we have access to the scope of the main controller -->
+  
+  <h2 ng-show="groups.selectedGroup">{{ groups.selectedGroup.title}} <span class="{{ groups.selectedGroup.picture | lowercase }}">{{ groups.selectedCharacter.picture }}</span></h2>
 
-  <form ng-submit="groups.createGroup()" name="groups.group.form" novalidate>
+  <form name="groups.newGroup" ng-submit="groups.addGroup()">
+    <label>Name</label>
+    <input type="text" name="name" ng-model="main.character.name">
+    <label>Lightsaber</label>
+    <input type="text" name="lightsaber" ng-model="main.character.lightsaber">
+    <input type="submit" value="Add">
+  </form>
+
+
+
+
+
+
+  <!-- <form ng-submit="groups.createGroup()" name="groups.group.form" novalidate>
     <label for="grouptitle">Title</label>
     <input name="title" 
     placeholder="E.g Newcastle University Geography Aerial Wars module"
@@ -21,8 +35,20 @@
     required>
 
     <input type="submit" value="Add">
-  </form>
+  </form> -->
 
   <h2 ng-class="groups.newGroup.title">{{groups.newGroup.title}}</h2>
 
 </main>
+
+<main ng-controller="MainController as main">
+    <h2 ng-show="main.selectedCharacter">{{ main.selectedCharacter.name}} wields a <span class="{{ main.selectedCharacter.lightsaber | lowercase }}">{{ main.selectedCharacter.lightsaber }}</span> lightsaber!</h2>
+    
+
+    <h1>The Lightsaber Database</h1>
+    <ul>
+      <li ng-repeat="character in main.characters" ng-click="main.selectCharacter(character)">
+        {{ character.name }}'s lightsaber is <span class="{{ character.lightsaber | lowercase }}">{{ character.lightsaber }}</span> <a href="#" ng-click="main.editCharacter(character)">Edit</a> <button ng-click="main.deleteCharacter(character)">Delete</button>
+      </li>
+    </ul>
+  </main>
