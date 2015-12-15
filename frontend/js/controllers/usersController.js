@@ -27,12 +27,22 @@ angular
       });
     }
 
-    self.isLoggedIn = function() {
-      return !!TokenService.getToken();
+
+    function createUser(){
+      $http
+      .post('http://localhost:3000/users', { user: self.newUser })
+      .then(function(response){
+        self.all.push(self.newUser);
+        toggleUserForm();
+        $('form#new-user').trigger("reset");
+      });
     }
-    if (self.isLoggedIn ()){
-      self.getUsers();
-      self.user = TokenService.getUser();
+    
+
+    this.deleteUser = function(user){
+      User.delete({ id: user._id });
+      var index = self.users.indexOf(user);
+      self.users.splice(index, 1);
     }
 
 
@@ -65,25 +75,8 @@ angular
     //   });
     // }
 
-    // function createUser(){
-    //   $http
-    //   .post('http://localhost:3000/users', { user: self.newUser })
-    //   .then(function(response){
-    //     self.all.push(self.newUser);
-    //     toggleUserForm();
-    //     $('form#new-user').trigger("reset");
-    //   });
-    // }
 
-    // function removeUser(user){
-    //   $http
-    //     .delete('http://localhost:3000/users/' + user._id)
-    //     .then(function(response){
-    //       console.log("arrived")
-    //       var index = self.all.indexOf(user);
-    //       self.all.splice(index, 1);
-    //     });
-    // }
+ 
 
     // function selectUser(user){
     //   toggleEditForm();
