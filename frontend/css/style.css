@@ -1,111 +1,101 @@
-/*body {
-  background-image: url('http://eyeforpharmadrupalfs.s3.amazonaws.com/team_1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  }*/
-
+  body {
+    margin: 0 auto;
+  }
 
   h1.homepagetitle {
+    padding: 10px;
+    margin: 0;
     text-align: center;
+    font-size: 50px;
   }
 
   .signupbutton {
 
   }
 
-  .tabs {
+  ul {
     margin: 0;
     padding: 0;
-    margin-bottom: 25px;
   }
 
-  .tabs li {
-    list-style-type: none;
-    overflow-x: hidden;
-    white-space: nowrap; 
-    height: 1em;
-    width: 100%;
-
-  }
-
-  .table{
-    margin: 0 auto;
-  }
-
-  ul li{
-    display: inline;
-  }
-
-  .list-group-item {
-    width: 60%;
-    margin: 0 auto;
-  }
-
-  .listgroup {
-    display: table; 
-    margin: 0 auto;
-  }
-
-  #GroupHeader {
-    margin: 0 auto;
-    display: table;
-    padding: 50px 30px 50px 80px;
-  }
-
-  #pictureForGroups {
-    height: 400px;
-    width: 400px;
-    object-fit: cover;
-  }
-
-  .homepagelayout {
+  header {
+    background: #edeeee;
     text-align: center;
-    margin: 0 auto;
-    width: 60%;
-    border: 3px solid #337ab7;
-    padding: 10px;
-    border-radius: 4px;
+    padding-top: 25px;
   }
 
-/*.homepageicon {
-  height: 200px;
-  width: 200px;
-  color: black;
-  border: 1px solid black;
-  border-radius: 50%;
+  header button {
+    border: 0;
+    background: #3A5795;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+    .table{
+      margin: 0 auto;
+    }
 
-}
+    ul li{
+      display: inline;
+    }
 
-.icontext {
-  margin-top: 2cm;
-}*/
+    div.navigation {
+      text-align: center;
+      display: table;
+      margin: 10px auto;
+    }
 
+    #GroupHeader {
+      margin: 0 auto;
+      display: table;
+      padding: 50px 30px 50px 80px;
+    }
 
-.homepageicon {
-  margin-top: 30px;
-}
+    #pictureForGroups {
+      height: 400px;
+      width: 400px;
+      object-fit: cover;
+    }
 
-.homepageicon ul {
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-}
+    .homepagelayout {
+      text-align: center;
+      margin: 0 auto;
+      width: 60%;
+/*      border: 3px solid #337ab7;*/
+      padding: 10px;
+      border-radius: 4px;
+    }
 
-.homepageicon ul li {
-  margin: 0 auto;
-  text-align: center;
-  list-style: none;
+    .homepageicon {
+      margin-top: 30px;
+    }
 
-}
+    .homepageicon ul {
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+    }
 
-.homepageicon ul li .circle {
-  line-height: 260px;
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 300px;
-  height: 300px;
-  border: 1px solid #333;
-  border-radius: 100%;
-}
+    .homepageicon ul li {
+      margin: 0 auto;
+      text-align: center;
+      list-style: none;
+
+    }
+
+    .homepageicon ul li .circle {
+      line-height: 260px;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 300px;
+      height: 300px;
+      border: 1px solid #333;
+      border-radius: 100%;
+    }
+
+    .list-group-item.active {
+      background: #4F618F;
+    }
 
 
