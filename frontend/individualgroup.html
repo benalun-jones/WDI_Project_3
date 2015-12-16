@@ -1,9 +1,8 @@
 <h1>Its working!</h1>
 
-<body>
-  <main ng-controller="TasksController as tasks" ng-init="tasks.findByGroup()">
-    <ul>
-      <li ng-repeat="task in tasks.tasks">{{ tasks.task_name }}</li>
-    </ul>
-  </main>
-</body>
+<main>
+  {{tasks}}
+  <ul>
+    <li ng-repeat="task in tasks.tasks">{{ task.task_name }}</li>
+  </ul>
+</main>

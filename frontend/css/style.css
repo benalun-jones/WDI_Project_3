@@ -1,13 +1,46 @@
-body {
+/*body {
   background-image: url('http://eyeforpharmadrupalfs.s3.amazonaws.com/team_1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-}
+  }*/
 
-h1.homepagetitle {
-  text-align: center;
-}
+  h1.homepagetitle {
+    text-align: center;
+  }
 
-.signupbutton {
-  
-}
+  .signupbutton {
+
+  }
+
+  .tabs li {
+    list-style-type: none;
+    overflow-x: hidden;
+    white-space: nowrap; 
+    height: 1em;
+    width: 100%;
+
+  }
+
+  .table{
+    display: table; 
+    margin: 0 auto;
+  }
+
+  ul li{
+    display: inline;
+  }
+
+  .list-group-item {
+    width: 95%;
+  }
+
+  .listgroup {
+    display: table; 
+    margin: 0 auto;
+  }
+
+  #GroupHeader {
+    margin: 0 auto;
+    display: table;
+    padding: 50px 30px 50px 80px;
+  }

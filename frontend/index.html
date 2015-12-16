@@ -3,7 +3,9 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mind Merge</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
@@ -12,6 +14,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/satellizer/0.13.1/satellizer.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
   <script src="./js/app.js" charset="utf-8"></script>
 
@@ -28,7 +31,7 @@
 
   <h1 class="homepagetitle">MindMerge</h1>
   <ul>
-  <li><a ng-click="users.logout()">Log Out</a></li>
+    <li><a ng-click="users.logout()">Log Out</a></li>
   </ul>
 
 <!--   <section ng-show="UsersController as users">
@@ -44,14 +47,19 @@
       </nav>
     </header>
   </section> -->
-
-  <nav class="tabs">
-    <a ui-sref-active="active" ui-sref="home">Home</a>
-    <a ui-sref-active="active" ui-sref="howto">How To</a>
-    <a ui-sref-active="active" ui-sref="profile">Profile</a>
-    <a ui-sref-active="active" ui-sref="groups">Groups</a>
-    <a ui-sref-active="active" ui-sref="tasks">Tasks</a>
-  </nav>
+  <div class="table">
+    <ul class="tabs">
+      <li><a ui-sref-active="active" ui-sref="home" class="list-group-item active">Home</a></li>
+      <li class="separator visible-md visible-lg"></li>
+      <li><a ui-sref-active="active" ui-sref="howto" class="list-group-item">How To</a></li>
+      <li class="separator visible-md visible-lg"></li>
+      <li><a ui-sref-active="active" ui-sref="profile" class="list-group-item">Profile</a></li>
+      <li class="separator visible-md visible-lg"></li>
+      <li><a ui-sref-active="active" ui-sref="groups" class="list-group-item">Groups</a></li>
+      <li class="separator visible-md visible-lg"></li>
+      <li><a ui-sref-active="active" ui-sref="tasks" class="list-group-item">Tasks</a></li>
+    </ul>
+  </div>
 
   <div ui-view></div>
 

@@ -1,6 +1,6 @@
 <h1>Let your peers know what needs to be done!</h1>
 
-<main ng-controller="TasksController as tasks" ng-init="tasks.getGroups()">
+<main ng-init="tasks.getGroups()">
 
   <h2 ng-show="tasks.selectedTask">{{ tasks.selectedTask.task_name}} <span class="{{ tasks.selectedTask.author | lowercase }}">{{ tasks.selectedTask.author }}</span><span class="{{ tasks.selectedTask.pages | lowercase }}">{{ tasks.selectedTask.pages }}</span><span class="{{ tasks.selectedTask.notes | lowercase }}">{{ tasks.selectedTask.notes }}</span></h2>
 

@@ -4,7 +4,7 @@ angular
 
 TasksController.$inject = ['Task', '$resource', 'Group', '$stateParams'];
 function TasksController(Task, $resource, Group, $stateParams) {
-
+  console.log("TASKS LOADED!!!!");
   var self = this;
   this.task = {}
   this.tasks = Task.query();
@@ -31,7 +31,11 @@ function TasksController(Task, $resource, Group, $stateParams) {
   };
 
   this.findByGroup = function() {
-    this.tasks =Task.query({group: $stateParams._id})
+    console.log("findByGroup");
+    this.tasks = Task.find({group: $stateParams.id})
+    setTimeout(function() {
+      console.log(this.tasks);
+    }, 2000)
   }
 
   this.deleteTask = function(task){

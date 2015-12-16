@@ -25,8 +25,9 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       templateUrl: "profile.html"
     })
     .state('showgroup', {
-      url: "/showgroups/:_id",
-      templaterUrl: "individualgroup.html"
+      url: "/showgroup/:id",
+      templateUrl: "individualgroup.html",
+      controller: "TasksController as tasks"
     })
     .state('groups', {
       url: "/groups",
@@ -42,11 +43,13 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     })
     .state('tasks', {
       url: "/tasks",
-      templateUrl: "task.html"
+      templateUrl: "task.html",
+      controller: "TasksController as tasks"
     })
     .state('addtask', {
       url: "/addtask",
-      templateUrl: "addtask.html"
+      templateUrl: "addtask.html",
+      controller: "TasksController as tasks"
     });
   
   

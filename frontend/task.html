@@ -1,5 +1,5 @@
 <h1>The Task Page</h1>
-<body>
+
 <section ng-show="tasks.all.length">
     <p>Here are a list of our current tasks:</p>
     <ul>
@@ -9,9 +9,11 @@
     </ul>
     <h2 ng-class="group.task_name">{{task.task_name}}</h2>
   </section>
+
+
   <nav class="grouptabs">
     <a ui-sref-active="active" ui-sref="addtask">Add Task</a>
   </nav>
-</body>
+
 
 
