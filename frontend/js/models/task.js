@@ -11,9 +11,6 @@ angular
       'create': { method: 'POST' },
       'save': {method: 'POST' }
     });
-    return Task;
-
-
   }
 
 
