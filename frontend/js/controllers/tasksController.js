@@ -25,6 +25,11 @@ function GroupsController(Group, $resource) {
       });
     }
   };
-  
+
+  this.deleteTask = function(task){
+    Task.delete({id: task._id});
+    var index = self.tasks.indexOf(task);
+    self.tasks.splice(index, 1);
+  }
 
 }
