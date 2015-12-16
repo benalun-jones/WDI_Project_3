@@ -44,3 +44,8 @@
     display: table;
     padding: 50px 30px 50px 80px;
   }
+
+  #pictureForGroups {
+    height: 400px;
+    width: 400px;
+  }
