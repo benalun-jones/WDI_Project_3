@@ -32,4 +32,8 @@ function GroupsController(Group, $resource) {
     self.tasks.splice(index, 1);
   }
 
+   this.editTask = function(task){
+    self.task = task;
+  }
+
 }
