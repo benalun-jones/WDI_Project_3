@@ -3,7 +3,7 @@ var Group = require('../models/group');
 function getAll(req, res) {
   Group.find(function(err, groups){
     if (err) return res.status(404).json({ message: 'Something went wrong and we could not pull the groups.'});
-    res.status(200).json({ groups: groups });
+    res.status(200).json(groups);
   });
 };
 

@@ -36,6 +36,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/addgroup",
       templateUrl: "addgroup.html"
     })
+    .state('tasks', {
+      url: "/tasks",
+      templateUrl: "task.html"
+    })
     .state('addtask', {
       url: "/addtask",
       templateUrl: "addtask.html"

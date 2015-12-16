@@ -1,33 +1,23 @@
-<h1>Add A New Task on your reading list</h1>
-<main ng-controller="TasksController as tasks">
-  <form>
 
-    <form ng-submit="tasks.createTask()" name="tasks.task.form" novalidate>
-      <label for="task_name">Title</label>
-      <input name="task_name" 
-      placeholder="E.g Aerial Geographies"
-      ng-model="tasks.newTask.task_name"
-      required>
+<main ng-controller="TaskController as task">
+  <h2 ng-show="task.selectedTask">{{ task.selectedTask.task_name}}<span class="{{ task.selectedTask.author | lowercase }}">{{ task.selectedTask.author }}</span><span class="{{ task.selectedTask.pages | lowercase }}">{{ task.selectedTask.pages }}</span><span class="{{ task.selectedTask.notes | lowercase }}">{{ task.selectedTask.notes }}</span></h2>
 
-      <label for="author">Author</label>
-      <input name="author" 
-      placeholder="Add an author for this task"
-      ng-model="tasks.newTasks.author"
-      required>
-
-      <label for="pages">Pages</label>
-      <input name="pages" 
-      placeholder="Add the pages to note for this task"
-      ng-model="tasks.newTasks.pages"
-      required>
-
-      <input type="submit" value="Add">
-    </form>
-
-    <h2 ng-class="groups.newGroup.title">{{groups.newGroup.title}}</h2>
+  <form name="task.newTask" ng-submit="task.addTask()">
+    <label>Name</label>
+    <input type="text" name="name" ng-model="task.task_name">
+    <label>Author</label>
+    <input type="text" name="author" ng-model="task.author">
+    <label>Pages</label>
+    <input type="text" name="pages" ng-model="task.pages">
+    <label>Notes</label>
+    <input type="text" name="notes" ng-model="task.notes">
+    <input type="submit" value="Add">
   </form>
+
+  <h1>The Tasks Database</h1>
+  <ul>
+    <li ng-repeat="task in task.tasks" ng-click="task.selectTask(task)">
+      {{ taks.task_name }} <span class="{{ task.author | lowercase }}">{{ task.author }}</span> <a href="#" ng-click="main.editCharacter(character)">Edit</a> <button ng-click="main.deleteCharacter(character)">Delete</button>
+    </li>
+  </ul>
 </main>
-
-
-
-notes: String,
