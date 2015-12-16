@@ -2,7 +2,7 @@ angular
   .module('MindMergeApp')
   .controller('TasksController', TasksController);
 
-  TasksController.$inject = ['$http'];
-  function TasksController($http) {
+  TasksController.$inject = ['Task', '$resource'];
+  function GroupsController(Group, $resource) {
 
   }
