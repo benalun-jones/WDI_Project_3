@@ -4,12 +4,19 @@
   background-repeat: no-repeat;
   }*/
 
+
   h1.homepagetitle {
     text-align: center;
   }
 
   .signupbutton {
 
+  }
+
+  .tabs {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
   }
 
   .tabs li {
@@ -22,7 +29,6 @@
   }
 
   .table{
-    display: table; 
     margin: 0 auto;
   }
 
@@ -53,6 +59,7 @@
   }
 
   .homepagelayout {
+    text-align: center;
     margin: 0 auto;
     width: 60%;
     border: 3px solid #337ab7;
@@ -60,14 +67,45 @@
     border-radius: 4px;
   }
 
-.homepageicon {
+/*.homepageicon {
   height: 200px;
   width: 200px;
   color: black;
   border: 1px solid black;
   border-radius: 50%;
+
 }
 
 .icontext {
+  margin-top: 2cm;
+}*/
+
+
+.homepageicon {
+  margin-top: 30px;
+}
+
+.homepageicon ul {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.homepageicon ul li {
+  margin: 0 auto;
+  text-align: center;
+  list-style: none;
 
 }
+
+.homepageicon ul li .circle {
+  line-height: 260px;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 300px;
+  height: 300px;
+  border: 1px solid #333;
+  border-radius: 100%;
+}
+
+
