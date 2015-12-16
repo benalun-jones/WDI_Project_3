@@ -3,7 +3,7 @@ var Task = require('../models/task');
 function getAll(req, res) {
   Task.find(function(err, tasks){
     if (err) return res.status(404).json({ message: 'Something went wrong and we could not pull the tasks.'});
-    res.status(200).json({ tasks: tasks });
+    res.status(200).json(tasks);
   });
 };
 

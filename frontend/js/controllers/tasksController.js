@@ -3,7 +3,7 @@ angular
 .controller('TasksController', TasksController);
 
 TasksController.$inject = ['Task', '$resource'];
-function GroupsController(Group, $resource) {
+function TasksController(Task, $resource) {
 
   var self = this;
   this.task = {}
@@ -19,7 +19,8 @@ function GroupsController(Group, $resource) {
         self.task = {};
       });
     } else {
-      Task.save(self.task, function(data) {
+      debugger
+      Task.create(self.task, function(data) {
         self.tasks.push(data.task);
         self.task = {};
       });
