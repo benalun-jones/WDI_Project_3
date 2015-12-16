@@ -1,6 +1,6 @@
 <h1>Let your peers know what needs to be done!</h1>
 
-<main ng-controller="TasksController as tasks">
+<main ng-controller="TasksController as tasks" ng-init="tasks.getGroups()">
 
   <h2 ng-show="tasks.selectedTask">{{ tasks.selectedTask.task_name}} <span class="{{ tasks.selectedTask.author | lowercase }}">{{ tasks.selectedTask.author }}</span><span class="{{ tasks.selectedTask.pages | lowercase }}">{{ tasks.selectedTask.pages }}</span><span class="{{ tasks.selectedTask.notes | lowercase }}">{{ tasks.selectedTask.notes }}</span></h2>
 
@@ -13,6 +13,7 @@
     <input type="text" name="pages" ng-model="tasks.task.pages">
     <label>Notes</label>
     <input type="text" name="notes" ng-model="tasks.task.notes">
+    <select ng-model="tasks.task.group"><option ng-repeat="group in tasks.groups" value="{{ group._id }}">{{ group.title }}</option></select>
     <input type="submit" value="Add">
   </form>
   <h1>The Tasks Database</h1>

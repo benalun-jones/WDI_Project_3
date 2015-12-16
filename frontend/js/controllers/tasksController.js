@@ -2,8 +2,8 @@ angular
 .module('MindMergeApp')
 .controller('TasksController', TasksController);
 
-TasksController.$inject = ['Task', '$resource'];
-function TasksController(Task, $resource) {
+TasksController.$inject = ['Task', '$resource', 'Group', '$stateParams'];
+function TasksController(Task, $resource, Group, $stateParams) {
 
   var self = this;
   this.task = {}
@@ -15,17 +15,24 @@ function TasksController(Task, $resource) {
 
   this.addTask = function() {
     if (self.task._id) {
-      Task.update(self.task, function(){
+      Task.update({ id: self.task._id }, self.task, function(){
         self.task = {};
       });
     } else {
-      debugger
       Task.create(self.task, function(data) {
         self.tasks.push(data.task);
         self.task = {};
       });
     }
   };
+
+  this.getGroups = function() {
+    self.groups = Group.query();
+  };
+
+  this.findByGroup = function() {
+    this.tasks =Task.query({group: $stateParams._id})
+  }
 
   this.deleteTask = function(task){
     Task.delete({id: task._id});

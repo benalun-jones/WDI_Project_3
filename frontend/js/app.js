@@ -24,6 +24,10 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/profile",
       templateUrl: "profile.html"
     })
+    .state('showgroup', {
+      url: "/showgroups/:_id",
+      templaterUrl: "individualgroup.html"
+    })
     .state('groups', {
       url: "/groups",
       templateUrl: "group.html"
@@ -44,6 +48,7 @@ function MainRouter($stateProvider, $urlRouterProvider) {
       url: "/addtask",
       templateUrl: "addtask.html"
     });
+  
   
   $urlRouterProvider.otherwise("/");
 }
