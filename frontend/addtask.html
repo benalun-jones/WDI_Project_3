@@ -1,23 +1,27 @@
+<h1>Let your peers know what needs to be done!</h1>
 
-<main ng-controller="TaskController as task">
-  <h2 ng-show="task.selectedTask">{{ task.selectedTask.task_name}}<span class="{{ task.selectedTask.author | lowercase }}">{{ task.selectedTask.author }}</span><span class="{{ task.selectedTask.pages | lowercase }}">{{ task.selectedTask.pages }}</span><span class="{{ task.selectedTask.notes | lowercase }}">{{ task.selectedTask.notes }}</span></h2>
+<main ng-controller="TasksController as tasks">
 
-  <form name="task.newTask" ng-submit="task.addTask()">
+  <h2 ng-show="tasks.selectedTask">{{ tasks.selectedTask.task_name}} <span class="{{ tasks.selectedTask.author | lowercase }}">{{ tasks.selectedTask.author }}</span><span class="{{ tasks.selectedTask.pages | lowercase }}">{{ tasks.selectedTask.pages }}</span><span class="{{ tasks.selectedTask.notes | lowercase }}">{{ tasks.selectedTask.notes }}</span></h2>
+
+  <form name="tasks.newTask" ng-submit="tasks.addTask()">
     <label>Name</label>
-    <input type="text" name="name" ng-model="task.task_name">
+    <input type="text" name="name" ng-model="tasks.task.task_name">
     <label>Author</label>
-    <input type="text" name="author" ng-model="task.author">
+    <input type="text" name="author" ng-model="tasks.task.author">
     <label>Pages</label>
-    <input type="text" name="pages" ng-model="task.pages">
+    <input type="text" name="pages" ng-model="tasks.task.pages">
     <label>Notes</label>
-    <input type="text" name="notes" ng-model="task.notes">
+    <input type="text" name="notes" ng-model="tasks.task.notes">
     <input type="submit" value="Add">
   </form>
-
   <h1>The Tasks Database</h1>
   <ul>
-    <li ng-repeat="task in task.tasks" ng-click="task.selectTask(task)">
-      {{ taks.task_name }} <span class="{{ task.author | lowercase }}">{{ task.author }}</span> <a href="#" ng-click="main.editCharacter(character)">Edit</a> <button ng-click="main.deleteCharacter(character)">Delete</button>
+  <li ng-repeat="task in tasks.tasks" ng-click="tasks.selectTask(task)">
+      {{ task.task_name }}<span class="{{ task.author }}">{{ task.author }}</span> <span class="{{ task.pages }}">{{ task.pages }}</span> <span class="{{ task.notes }}">{{ task.notes }}</span><a href="#" ng-click="tasks.editTask(task)">Edit</a> <button ng-click="tasks.deleteTask(task)">Delete</button>
     </li>
   </ul>
+
+  <h2 ng-class="tasks.newTask.task_name">{{tasks.newTask.task_name}}</h2>
+
 </main>
