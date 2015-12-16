@@ -31,7 +31,8 @@
   }
 
   .list-group-item {
-    width: 95%;
+    width: 60%;
+    margin: 0 auto;
   }
 
   .listgroup {
@@ -48,4 +49,13 @@
   #pictureForGroups {
     height: 400px;
     width: 400px;
+    object-fit: cover;
+  }
+
+  .homepagelayout {
+    margin: 0 auto;
+    width: 60%;
+    border: 3px solid #337ab7;
+    padding: 10px;
+    border-radius: 4px;
   }
