@@ -37,4 +37,4 @@ function GroupsController(Group, $resource) {
    self.group = group;
  }
 
-  }
+}

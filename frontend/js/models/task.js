@@ -2,7 +2,7 @@ angular
   .module('MindMergeApp')
   .factory('Task', Task);
 
-  Task.$inject = ['$resource'];
+  Task.$inject = ['$resource', 'API_URL'];
 
   function Task($resource){
     var Task = $resource('http://localhost:3000/projects/:id', null, {
