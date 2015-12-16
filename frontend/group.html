@@ -9,7 +9,21 @@
     </ul>
     <h2 ng-class="group.title">{{group.title}}</h2>
   </section>
+
+  <main ng-controller="GroupsController as groups">
+
+  <h2 ng-show="groups.selectedGroup">{{ groups.selectedGroup.title}} <span class="{{ groups.selectedGroup.picture | lowercase }}">{{ groups.selectedGroup.picture }}</span></h2>
+
+  <h1>The Groups Database</h1>
+  <ul>
+    <li ng-repeat="group in groups.groups" ng-click="groups.selectGroup(group)">
+      {{ group.title }}<span class="{{ group.picture }}">{{ group.picture }}</span> <a href="#" ng-click="groups.editGroup(group)">Edit</a> <a ui-sref="showgroup({_id: group._id})">View Tasks</a> <button ng-click="groups.deleteGroup(group)">Delete</button>
+    </li>
+  </ul>
+
   <nav class="grouptabs">
     <a ui-sref-active="active" ui-sref="addgroup">Add Group</a>
+
+    </nav>
   </nav>
   <body>

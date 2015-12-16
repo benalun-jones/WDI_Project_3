@@ -15,12 +15,6 @@
     <input type="text" name="picture" ng-model="groups.group.picture">
     <input type="submit" value="Add">
   </form>
-  <h1>The Groups Database</h1>
-  <ul>
-  <li ng-repeat="group in groups.groups" ng-click="groups.selectGroup(group)">
-      {{ group.title }}<span class="{{ group.picture }}">{{ group.picture }}</span> <a href="#" ng-click="groups.editGroup(group)">Edit</a> <a ui-sref="showgroup({_id: group._id})">View Tasks</a> <button ng-click="groups.deleteGroup(group)">Delete</button>
-    </li>
-  </ul>
 
   <h2 ng-class="groups.newGroup.title">{{groups.newGroup.title}}</h2>
 
