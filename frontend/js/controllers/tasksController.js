@@ -13,4 +13,11 @@ function GroupsController(Group, $resource) {
     self.selectedTask = Task.get({ id: task._id });
   };
 
+  this.addTask = function() {
+    if (self.task._id) {
+      Task.update(self.task, function(){
+        self.task = {};
+      });
+    }
+
 }
