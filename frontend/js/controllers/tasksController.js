@@ -18,6 +18,13 @@ function GroupsController(Group, $resource) {
       Task.update(self.task, function(){
         self.task = {};
       });
+    } else {
+      Task.save(self.task, function(data) {
+        self.tasks.push(data.task);
+        self.task = {};
+      });
     }
+  };
+  
 
 }
